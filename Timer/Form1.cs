@@ -89,6 +89,44 @@ namespace Timer
             groupList.SelectedItems[0].SubItems[1].Text = (int.Parse(groupList.SelectedItems[0].SubItems[1].Text) + 1).ToString();
         }
 
+        private void aGroup_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Random rd = new Random();
+                gresult.Text = rd.Next(1, groupList.Items.Count+1).ToString(); ;
+            }
+            catch
+            {
+                gresult.Text = "计算错误";
+                MessageBox.Show("计算错误，是否正确输入了组数?","错误提示");
+            }
+        }
+
+        private void materialFlatButton2_Click(object sender, EventArgs e)
+        {
+                try
+                {
+                    Random rd = new Random();
+                    getResult.Text = rd.Next(int.Parse(firNum.Text), int.Parse(secNum.Text) + 1).ToString();
+                    resBox.Items.Add(getResult.Text);
+                    resBox.TopIndex = resBox.Items.Count - resBox.Height / resBox.ItemHeight;
+                }
+                catch
+                {
+                    MessageBox.Show("抽取值错误，请检查输入值是否有误!", "错误提示");
+                }
+        }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("您确定要清空抽取的数据吗?\n这不会包括其他板块的数据", "提示", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                getResult.Text = "0";
+                resBox.Items.Clear();
+            }
+        }
+
         private void t1Stop_Click(object sender, EventArgs e)
         {
             t1.Enabled = false;
