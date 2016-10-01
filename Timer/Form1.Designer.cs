@@ -52,27 +52,35 @@
             this.groupList = new System.Windows.Forms.ListView();
             this.groupItem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.scoreItem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.firNum = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.secNum = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.getResult = new System.Windows.Forms.Label();
-            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.clearBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.resBox = new System.Windows.Forms.ListBox();
-            this.clearBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.getResult = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.secNum = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.firNum = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.plusT = new MaterialSkin.Controls.MaterialRadioButton();
+            this.subT = new MaterialSkin.Controls.MaterialRadioButton();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.sec5 = new MaterialSkin.Controls.MaterialCheckBox();
+            this.minTxt = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.secTxt = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.T5 = new System.Windows.Forms.Timer(this.components);
             this.TC.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // t1
@@ -99,6 +107,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.pm3);
             this.tabPage1.Controls.Add(this.pm2);
             this.tabPage1.Controls.Add(this.pm1);
@@ -106,10 +115,10 @@
             this.tabPage1.Controls.Add(this.calTime);
             this.tabPage1.Controls.Add(this.nowTime);
             this.tabPage1.Controls.Add(this.startTimeBtn);
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 344);
+            this.tabPage1.Size = new System.Drawing.Size(792, 352);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "计时器";
             // 
@@ -118,7 +127,7 @@
             this.pm3.AutoSize = true;
             this.pm3.Location = new System.Drawing.Point(33, 259);
             this.pm3.Name = "pm3";
-            this.pm3.Size = new System.Drawing.Size(88, 25);
+            this.pm3.Size = new System.Drawing.Size(56, 17);
             this.pm3.TabIndex = 6;
             this.pm3.Text = "00:00:00";
             // 
@@ -128,7 +137,7 @@
             this.pm2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold);
             this.pm2.Location = new System.Drawing.Point(32, 226);
             this.pm2.Name = "pm2";
-            this.pm2.Size = new System.Drawing.Size(118, 31);
+            this.pm2.Size = new System.Drawing.Size(80, 22);
             this.pm2.TabIndex = 5;
             this.pm2.Text = "00:00:00";
             // 
@@ -138,7 +147,7 @@
             this.pm1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold);
             this.pm1.Location = new System.Drawing.Point(31, 186);
             this.pm1.Name = "pm1";
-            this.pm1.Size = new System.Drawing.Size(149, 40);
+            this.pm1.Size = new System.Drawing.Size(96, 27);
             this.pm1.TabIndex = 4;
             this.pm1.Text = "00:00:00";
             // 
@@ -153,7 +162,7 @@
             this.t1Stop.MouseState = MaterialSkin.MouseState.HOVER;
             this.t1Stop.Name = "t1Stop";
             this.t1Stop.Primary = false;
-            this.t1Stop.Size = new System.Drawing.Size(59, 36);
+            this.t1Stop.Size = new System.Drawing.Size(42, 36);
             this.t1Stop.TabIndex = 3;
             this.t1Stop.Text = "清除";
             this.t1Stop.UseVisualStyleBackColor = true;
@@ -168,7 +177,7 @@
             this.calTime.Font = new System.Drawing.Font("微软雅黑", 70F, System.Drawing.FontStyle.Bold);
             this.calTime.Location = new System.Drawing.Point(7, 15);
             this.calTime.Name = "calTime";
-            this.calTime.Size = new System.Drawing.Size(674, 185);
+            this.calTime.Size = new System.Drawing.Size(454, 124);
             this.calTime.TabIndex = 2;
             this.calTime.Text = "00:00:00";
             this.calTime.Click += new System.EventHandler(this.label1_Click);
@@ -183,7 +192,7 @@
             this.nowTime.Location = new System.Drawing.Point(7, 303);
             this.nowTime.MouseState = MaterialSkin.MouseState.HOVER;
             this.nowTime.Name = "nowTime";
-            this.nowTime.Size = new System.Drawing.Size(70, 27);
+            this.nowTime.Size = new System.Drawing.Size(49, 19);
             this.nowTime.TabIndex = 1;
             this.nowTime.Text = "00:00";
             // 
@@ -198,7 +207,7 @@
             this.startTimeBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.startTimeBtn.Name = "startTimeBtn";
             this.startTimeBtn.Primary = false;
-            this.startTimeBtn.Size = new System.Drawing.Size(105, 36);
+            this.startTimeBtn.Size = new System.Drawing.Size(72, 36);
             this.startTimeBtn.TabIndex = 0;
             this.startTimeBtn.Text = "开始计时";
             this.startTimeBtn.UseVisualStyleBackColor = true;
@@ -212,10 +221,10 @@
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.groupList);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 344);
+            this.tabPage2.Size = new System.Drawing.Size(792, 352);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "计分";
             // 
@@ -236,7 +245,7 @@
             this.gresult.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold);
             this.gresult.Location = new System.Drawing.Point(6, 55);
             this.gresult.Name = "gresult";
-            this.gresult.Size = new System.Drawing.Size(199, 37);
+            this.gresult.Size = new System.Drawing.Size(136, 26);
             this.gresult.TabIndex = 1;
             this.gresult.Text = "按下OK键开始";
             // 
@@ -251,7 +260,7 @@
             this.aGroup.MouseState = MaterialSkin.MouseState.HOVER;
             this.aGroup.Name = "aGroup";
             this.aGroup.Primary = false;
-            this.aGroup.Size = new System.Drawing.Size(41, 36);
+            this.aGroup.Size = new System.Drawing.Size(30, 36);
             this.aGroup.TabIndex = 0;
             this.aGroup.Text = "OK";
             this.aGroup.UseVisualStyleBackColor = true;
@@ -266,7 +275,7 @@
             this.materialLabel1.Location = new System.Drawing.Point(334, 222);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(271, 27);
+            this.materialLabel1.Size = new System.Drawing.Size(195, 19);
             this.materialLabel1.TabIndex = 5;
             this.materialLabel1.Text = "Tips:双击组号可以加分哦~";
             // 
@@ -293,7 +302,7 @@
             this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton1.Name = "materialFlatButton1";
             this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(41, 36);
+            this.materialFlatButton1.Size = new System.Drawing.Size(30, 36);
             this.materialFlatButton1.TabIndex = 2;
             this.materialFlatButton1.Text = "OK";
             this.materialFlatButton1.UseVisualStyleBackColor = true;
@@ -312,7 +321,7 @@
             this.GroupNum.SelectedText = "";
             this.GroupNum.SelectionLength = 0;
             this.GroupNum.SelectionStart = 0;
-            this.GroupNum.Size = new System.Drawing.Size(163, 32);
+            this.GroupNum.Size = new System.Drawing.Size(163, 23);
             this.GroupNum.TabIndex = 1;
             this.GroupNum.UseSystemPasswordChar = false;
             // 
@@ -321,7 +330,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 25);
+            this.label2.Size = new System.Drawing.Size(32, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "组数";
             // 
@@ -331,7 +340,7 @@
             this.label1.Font = new System.Drawing.Font("微软雅黑", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(330, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 52);
+            this.label1.Size = new System.Drawing.Size(69, 35);
             this.label1.TabIndex = 3;
             this.label1.Text = "设置";
             // 
@@ -361,135 +370,35 @@
             this.scoreItem.Text = "分数";
             this.scoreItem.Width = 213;
             // 
-            // materialTabSelector1
-            // 
-            this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTabSelector1.BaseTabControl = this.TC;
-            this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Location = new System.Drawing.Point(-3, 63);
-            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(804, 58);
-            this.materialTabSelector1.TabIndex = 0;
-            this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.White;
             this.tabPage3.Controls.Add(this.clearBtn);
             this.tabPage3.Controls.Add(this.groupBox4);
             this.tabPage3.Controls.Add(this.groupBox3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 34);
+            this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(792, 344);
+            this.tabPage3.Size = new System.Drawing.Size(792, 352);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "抽取";
             // 
-            // groupBox3
+            // clearBtn
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.materialFlatButton2);
-            this.groupBox3.Controls.Add(this.secNum);
-            this.groupBox3.Controls.Add(this.materialLabel3);
-            this.groupBox3.Controls.Add(this.firNum);
-            this.groupBox3.Controls.Add(this.materialLabel2);
-            this.groupBox3.Location = new System.Drawing.Point(7, 16);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(176, 308);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "抽取";
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(7, 31);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(78, 27);
-            this.materialLabel2.TabIndex = 0;
-            this.materialLabel2.Text = "最小值";
-            // 
-            // firNum
-            // 
-            this.firNum.Depth = 0;
-            this.firNum.Hint = "";
-            this.firNum.Location = new System.Drawing.Point(12, 61);
-            this.firNum.MouseState = MaterialSkin.MouseState.HOVER;
-            this.firNum.Name = "firNum";
-            this.firNum.PasswordChar = '\0';
-            this.firNum.SelectedText = "";
-            this.firNum.SelectionLength = 0;
-            this.firNum.SelectionStart = 0;
-            this.firNum.Size = new System.Drawing.Size(144, 32);
-            this.firNum.TabIndex = 1;
-            this.firNum.Text = "1";
-            this.firNum.UseSystemPasswordChar = false;
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(7, 96);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(78, 27);
-            this.materialLabel3.TabIndex = 2;
-            this.materialLabel3.Text = "最大值";
-            // 
-            // secNum
-            // 
-            this.secNum.Depth = 0;
-            this.secNum.Hint = "";
-            this.secNum.Location = new System.Drawing.Point(12, 126);
-            this.secNum.MouseState = MaterialSkin.MouseState.HOVER;
-            this.secNum.Name = "secNum";
-            this.secNum.PasswordChar = '\0';
-            this.secNum.SelectedText = "";
-            this.secNum.SelectionLength = 0;
-            this.secNum.SelectionStart = 0;
-            this.secNum.Size = new System.Drawing.Size(144, 32);
-            this.secNum.TabIndex = 3;
-            this.secNum.UseSystemPasswordChar = false;
-            // 
-            // getResult
-            // 
-            this.getResult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.getResult.AutoSize = true;
-            this.getResult.Font = new System.Drawing.Font("微软雅黑", 40F, System.Drawing.FontStyle.Bold);
-            this.getResult.Location = new System.Drawing.Point(77, 52);
-            this.getResult.Name = "getResult";
-            this.getResult.Size = new System.Drawing.Size(94, 106);
-            this.getResult.TabIndex = 4;
-            this.getResult.Text = "0";
-            this.getResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // materialFlatButton2
-            // 
-            this.materialFlatButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton2.AutoSize = true;
-            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton2.Depth = 0;
-            this.materialFlatButton2.Location = new System.Drawing.Point(110, 263);
-            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton2.Name = "materialFlatButton2";
-            this.materialFlatButton2.Primary = false;
-            this.materialFlatButton2.Size = new System.Drawing.Size(59, 36);
-            this.materialFlatButton2.TabIndex = 4;
-            this.materialFlatButton2.Text = "开始";
-            this.materialFlatButton2.UseVisualStyleBackColor = true;
-            this.materialFlatButton2.Click += new System.EventHandler(this.materialFlatButton2_Click);
+            this.clearBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.clearBtn.AutoSize = true;
+            this.clearBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.clearBtn.Depth = 0;
+            this.clearBtn.Location = new System.Drawing.Point(723, 302);
+            this.clearBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.clearBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Primary = false;
+            this.clearBtn.Size = new System.Drawing.Size(42, 36);
+            this.clearBtn.TabIndex = 6;
+            this.clearBtn.Text = "清空";
+            this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // groupBox4
             // 
@@ -511,28 +420,41 @@
             this.resBox.BackColor = System.Drawing.Color.White;
             this.resBox.Font = new System.Drawing.Font("微软雅黑", 13F, System.Drawing.FontStyle.Bold);
             this.resBox.FormattingEnabled = true;
-            this.resBox.ItemHeight = 34;
+            this.resBox.ItemHeight = 24;
             this.resBox.Location = new System.Drawing.Point(257, 19);
             this.resBox.Name = "resBox";
-            this.resBox.Size = new System.Drawing.Size(182, 276);
+            this.resBox.Size = new System.Drawing.Size(182, 268);
             this.resBox.TabIndex = 5;
             // 
-            // clearBtn
+            // getResult
             // 
-            this.clearBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.clearBtn.AutoSize = true;
-            this.clearBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.clearBtn.Depth = 0;
-            this.clearBtn.Location = new System.Drawing.Point(723, 302);
-            this.clearBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.clearBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Primary = false;
-            this.clearBtn.Size = new System.Drawing.Size(59, 36);
-            this.clearBtn.TabIndex = 6;
-            this.clearBtn.Text = "清空";
-            this.clearBtn.UseVisualStyleBackColor = true;
-            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            this.getResult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.getResult.AutoSize = true;
+            this.getResult.Font = new System.Drawing.Font("微软雅黑", 40F, System.Drawing.FontStyle.Bold);
+            this.getResult.Location = new System.Drawing.Point(77, 52);
+            this.getResult.Name = "getResult";
+            this.getResult.Size = new System.Drawing.Size(63, 72);
+            this.getResult.TabIndex = 4;
+            this.getResult.Text = "0";
+            this.getResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.materialFlatButton2);
+            this.groupBox3.Controls.Add(this.secNum);
+            this.groupBox3.Controls.Add(this.materialLabel3);
+            this.groupBox3.Controls.Add(this.firNum);
+            this.groupBox3.Controls.Add(this.materialLabel2);
+            this.groupBox3.Location = new System.Drawing.Point(7, 16);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(176, 308);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "抽取";
             // 
             // label3
             // 
@@ -542,9 +464,198 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Tips:抽取的值包括您所输入的最小值和最大值";
             // 
+            // materialFlatButton2
+            // 
+            this.materialFlatButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialFlatButton2.AutoSize = true;
+            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton2.Depth = 0;
+            this.materialFlatButton2.Location = new System.Drawing.Point(110, 263);
+            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton2.Name = "materialFlatButton2";
+            this.materialFlatButton2.Primary = false;
+            this.materialFlatButton2.Size = new System.Drawing.Size(42, 36);
+            this.materialFlatButton2.TabIndex = 4;
+            this.materialFlatButton2.Text = "开始";
+            this.materialFlatButton2.UseVisualStyleBackColor = true;
+            this.materialFlatButton2.Click += new System.EventHandler(this.materialFlatButton2_Click);
+            // 
+            // secNum
+            // 
+            this.secNum.Depth = 0;
+            this.secNum.Hint = "";
+            this.secNum.Location = new System.Drawing.Point(12, 126);
+            this.secNum.MouseState = MaterialSkin.MouseState.HOVER;
+            this.secNum.Name = "secNum";
+            this.secNum.PasswordChar = '\0';
+            this.secNum.SelectedText = "";
+            this.secNum.SelectionLength = 0;
+            this.secNum.SelectionStart = 0;
+            this.secNum.Size = new System.Drawing.Size(144, 23);
+            this.secNum.TabIndex = 3;
+            this.secNum.UseSystemPasswordChar = false;
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(7, 96);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(57, 19);
+            this.materialLabel3.TabIndex = 2;
+            this.materialLabel3.Text = "最大值";
+            // 
+            // firNum
+            // 
+            this.firNum.Depth = 0;
+            this.firNum.Hint = "";
+            this.firNum.Location = new System.Drawing.Point(12, 61);
+            this.firNum.MouseState = MaterialSkin.MouseState.HOVER;
+            this.firNum.Name = "firNum";
+            this.firNum.PasswordChar = '\0';
+            this.firNum.SelectedText = "";
+            this.firNum.SelectionLength = 0;
+            this.firNum.SelectionStart = 0;
+            this.firNum.Size = new System.Drawing.Size(144, 23);
+            this.firNum.TabIndex = 1;
+            this.firNum.Text = "1";
+            this.firNum.UseSystemPasswordChar = false;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(7, 31);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(57, 19);
+            this.materialLabel2.TabIndex = 0;
+            this.materialLabel2.Text = "最小值";
+            // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialTabSelector1.BaseTabControl = this.TC;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Location = new System.Drawing.Point(-3, 63);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(804, 58);
+            this.materialTabSelector1.TabIndex = 0;
+            this.materialTabSelector1.Text = "materialTabSelector1";
+            // 
+            // plusT
+            // 
+            this.plusT.AutoSize = true;
+            this.plusT.Depth = 0;
+            this.plusT.Font = new System.Drawing.Font("Roboto", 10F);
+            this.plusT.Location = new System.Drawing.Point(3, 19);
+            this.plusT.Margin = new System.Windows.Forms.Padding(0);
+            this.plusT.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.plusT.MouseState = MaterialSkin.MouseState.HOVER;
+            this.plusT.Name = "plusT";
+            this.plusT.Ripple = true;
+            this.plusT.Size = new System.Drawing.Size(59, 30);
+            this.plusT.TabIndex = 7;
+            this.plusT.TabStop = true;
+            this.plusT.Text = "计时";
+            this.plusT.UseVisualStyleBackColor = true;
+            this.plusT.CheckedChanged += new System.EventHandler(this.plusT_CheckedChanged);
+            // 
+            // subT
+            // 
+            this.subT.AutoSize = true;
+            this.subT.Depth = 0;
+            this.subT.Font = new System.Drawing.Font("Roboto", 10F);
+            this.subT.Location = new System.Drawing.Point(3, 94);
+            this.subT.Margin = new System.Windows.Forms.Padding(0);
+            this.subT.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.subT.MouseState = MaterialSkin.MouseState.HOVER;
+            this.subT.Name = "subT";
+            this.subT.Ripple = true;
+            this.subT.Size = new System.Drawing.Size(74, 30);
+            this.subT.TabIndex = 8;
+            this.subT.TabStop = true;
+            this.subT.Text = "倒计时";
+            this.subT.UseVisualStyleBackColor = true;
+            this.subT.CheckedChanged += new System.EventHandler(this.subT_CheckedChanged);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.secTxt);
+            this.groupBox5.Controls.Add(this.minTxt);
+            this.groupBox5.Controls.Add(this.sec5);
+            this.groupBox5.Controls.Add(this.plusT);
+            this.groupBox5.Controls.Add(this.subT);
+            this.groupBox5.Location = new System.Drawing.Point(643, 15);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(140, 187);
+            this.groupBox5.TabIndex = 9;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "设置";
+            // 
+            // sec5
+            // 
+            this.sec5.AutoSize = true;
+            this.sec5.Depth = 0;
+            this.sec5.Font = new System.Drawing.Font("Roboto", 10F);
+            this.sec5.Location = new System.Drawing.Point(12, 49);
+            this.sec5.Margin = new System.Windows.Forms.Padding(0);
+            this.sec5.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.sec5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.sec5.Name = "sec5";
+            this.sec5.Ripple = true;
+            this.sec5.Size = new System.Drawing.Size(83, 30);
+            this.sec5.TabIndex = 9;
+            this.sec5.Text = "倒数5秒";
+            this.sec5.UseVisualStyleBackColor = true;
+            // 
+            // minTxt
+            // 
+            this.minTxt.Depth = 0;
+            this.minTxt.Hint = "分钟(00)";
+            this.minTxt.Location = new System.Drawing.Point(12, 127);
+            this.minTxt.MouseState = MaterialSkin.MouseState.HOVER;
+            this.minTxt.Name = "minTxt";
+            this.minTxt.PasswordChar = '\0';
+            this.minTxt.SelectedText = "";
+            this.minTxt.SelectionLength = 0;
+            this.minTxt.SelectionStart = 0;
+            this.minTxt.Size = new System.Drawing.Size(74, 23);
+            this.minTxt.TabIndex = 10;
+            this.minTxt.UseSystemPasswordChar = false;
+            // 
+            // secTxt
+            // 
+            this.secTxt.Depth = 0;
+            this.secTxt.Hint = "秒";
+            this.secTxt.Location = new System.Drawing.Point(12, 156);
+            this.secTxt.MouseState = MaterialSkin.MouseState.HOVER;
+            this.secTxt.Name = "secTxt";
+            this.secTxt.PasswordChar = '\0';
+            this.secTxt.SelectedText = "";
+            this.secTxt.SelectionLength = 0;
+            this.secTxt.SelectionStart = 0;
+            this.secTxt.Size = new System.Drawing.Size(74, 23);
+            this.secTxt.TabIndex = 11;
+            this.secTxt.UseSystemPasswordChar = false;
+            // 
+            // T5
+            // 
+            this.T5.Interval = 1000;
+            this.T5.Tick += new System.EventHandler(this.T5_Tick);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.materialTabSelector1);
@@ -565,10 +676,12 @@
             this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -611,6 +724,13 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialFlatButton clearBtn;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private MaterialSkin.Controls.MaterialSingleLineTextField secTxt;
+        private MaterialSkin.Controls.MaterialSingleLineTextField minTxt;
+        private MaterialSkin.Controls.MaterialCheckBox sec5;
+        private MaterialSkin.Controls.MaterialRadioButton plusT;
+        private MaterialSkin.Controls.MaterialRadioButton subT;
+        private System.Windows.Forms.Timer T5;
     }
 }
 
