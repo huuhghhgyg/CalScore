@@ -1,0 +1,6 @@
+{
+  "name": "Calscore",
+  "tagline": "一个以红岭中学信息组的\"加分计时器\"为对手的另一个\"加分计时器\"",
+  "body": "## **说明**\r\n\r\n关于作者:\r\n\r\n本程序由huuhghhgyg耗时共11小时(小于)完成,功能相比竞争对手的有所提升\r\n\r\n**增强**\r\n\r\n相比红岭中学的\"加分计时器\"增加了功能，并且强化了以下功能:\r\n1,计时器:\r\n可以正计时，倒计时，倒计时5秒后再正计时。\r\n增加了微秒\r\n没有时间限制\r\n2,小组加分\r\n更直观，没有组数限制(在你电脑的成熟范围中)\r\n3，显示\r\n重要内容字体更大，更直观\r\n界面采用Material Skin,带来更流畅的操作体验\r\n4，更方便\r\n一个文件，复制即用\r\n\r\n## **历史版本&更新**\r\n\r\n###**竞争对手:红岭中学信息组\"加分计时器\"**\r\n\r\n![](/images/HLZX1.png)\r\n\r\n![](/images/HLZX2.png)\r\n\r\n![](/images/HLZX3.png)\r\n\r\n###**我的Project CalScore**\r\n\r\n**Version1.0**\r\n\r\n第一个版本\r\n\r\n计时\r\n\r\n![](/images/Timer1_0_1.png)\r\n\r\n计分\r\n\r\n![](/images/Timer1_0_2.png)\r\n\r\n随机抽取\r\n\r\n![](/images/Timer1_0_3.png)",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
